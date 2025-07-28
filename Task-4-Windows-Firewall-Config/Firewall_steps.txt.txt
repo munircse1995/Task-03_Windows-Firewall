@@ -1,0 +1,38 @@
+Task 4: Setup and Use a Firewall on Windows
+--------------------------------------------
+
+Objective: Configure and test basic firewall rules to allow or block traffic using Windows Firewall.
+
+# Step 1: Open Windows Firewall GUI
+- Press Windows Key > Search "Windows Defender Firewall" > Open it.
+
+# Step 2: View Current Firewall Rules
+- Click "Advanced Settings" > View Inbound and Outbound Rules
+
+# Step 3: Block Port 23 (Telnet)
+- Go to "Inbound Rules" > Click "New Rule..."
+- Select "Port" > TCP > Specific port: 23
+- Choose "Block the connection"
+- Apply to all profiles
+- Name it: "Block Telnet Port 23"
+
+# Step 4: Test Telnet Block (Telnet was not installed)
+- Attempted command: `telnet 127.0.0.1 23`
+- Result: 'telnet' is not recognized (default on many Windows 10/11 systems)
+
+# Step 5: Allow SSH (Port 22)
+- Create another Inbound Rule for port 22:
+- Allow the connection > All profiles > Name: "Allow SSH Port 22"
+
+# Step 6: Remove Telnet Block Rule
+- Go to "Inbound Rules"
+- Right-click "Block Telnet Port 23" > Delete
+
+# Step 7: Security and System Stability
+- No software was installed.
+- No internet, performance, or network settings were affected.
+- All changes were GUI-based and safely reverted.
+
+Summary:
+- A firewall filters traffic by inspecting incoming/outgoing packets and applying rules.
+- Blocking Telnet is best practice as it's an insecure protocol.
